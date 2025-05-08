@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tong Sampah Otomatis</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1e1e1e;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      background: linear-gradient(to right, #a8e6cf, #d0f0c0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .content {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .content img {
+      width: 50%;
+      border-radius: 12px;
+      margin: 15px 0;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #00c3ff;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 195, 255, 0.4);
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #a8e6cf, #d0f0c0, #b2fab4, #98fb98);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <header>
+      <h1>Tong Sampah Otomatis</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        Tong Sampah Otomatis adalah inovasi siswa SMAN 1 Pekalongan dalam menggabungkan teknologi sensor dengan prinsip ramah lingkungan. Tong sampah ini dapat membuka tutupnya secara otomatis saat ada tangan mendekat.
+      </p>
+
+      <img src="https://th.bing.com/th/id/OIP.yjJMHUoFY97Y6z6hPhQq6QHaHa?rs=1&pid=ImgDetMain" alt="Ilustrasi tong sampah otomatis">
+
+      <p>
+        Proyek ini dirancang untuk membiasakan masyarakat membuang sampah tanpa menyentuh permukaan tong secara langsung, yang dapat membantu mencegah penyebaran kuman.
+      </p>
+
+      <p>
+        Sensor gerak inframerah untuk membuka tutup secara otomatis<br>
+        Desain anti-bau dengan penutup rapat<br>
+        Ditenagai oleh baterai atau adaptor listrik<br>
+        Hemat energi dan ramah lingkungan<br>
+        Cocok untuk dapur, kantor, atau ruang tamu<br>
+      </p>
+
+      <p>
+        Diharapkan teknologi ini bisa menjadi inspirasi untuk menciptakan lingkungan yang lebih bersih dan sehat, serta meningkatkan kesadaran teknologi di kalangan pelajar guna mendukung Adiwiyata Nasional.
+      </p>
+
+      <a class="back-link" href="index_with_bg.html">&larr; Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      const backLink = document.querySelector('.back-link');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>
