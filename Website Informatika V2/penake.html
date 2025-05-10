@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> PENAKE (Penyiram Tanaman berbasis Kelembapan) </title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      background: linear-gradient(to right, #ffffff, #e0e0e0);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .content {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .content img {
+      width: 35%;
+      border-radius: 12px;
+      margin: 15px auto;
+      display: block;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #00c3ff;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 195, 255, 0.4);
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #00c3ff, #00ff85, #00e676, #00bfa5);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <header>
+      <h1>PENAKE</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        <strong>PENAKE (Penyiram Tanaman berbasis Kelembapan)</strong> merupakan inovasi dari siswa kelas <strong>XI Kartini 4 Kelompok 1 (ÆTHERY)</strong>. Produk ini adalah alat penyiram tanaman otomatis yang bekerja berdasarkan tingkat kelembapan tanah. Dengan menggunakan sensor kelembapan yang ditanam di dalam tanah, alat ini mampu mendeteksi saat tanaman membutuhkan air. Ketika kelembapan tanah menurun, alat ini secara otomatis akan mengalirkan air dari tangki ke tanaman.
+      </p>
+
+      <img src="https://rekayasa-teknologi-vert.vercel.app/xi4_1.jpg" alt="Ilustrasi AC Adiwiyata">
+
+      <p>
+        <strong>Manfaat:</strong><br>
+        1. Menghemat Air<br>
+        2. Menghemat Waktu dan Tenaga<br>
+        3. Menjaga Kesehatan Tanaman<br>
+        4. Mendukung Pertanian Pintar<br>
+        5. Cocok untuk Pemilik Tanaman yang Sibuk<br>
+      </p>
+
+      <a class="back-link" href="index_with_bg.html">&larr; Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      const backLink = document.querySelector('.back-link');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

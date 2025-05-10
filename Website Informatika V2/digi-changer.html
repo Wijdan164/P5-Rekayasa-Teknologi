@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Digi Changer </title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      background: linear-gradient(to right, #ffffff, #cccccc);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .content {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .content img {
+      width: 50%;
+      border-radius: 12px;
+      margin: 15px auto;
+      display: block;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #00c3ff;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 195, 255, 0.4);
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00, #FF4500);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <header>
+      <h1>Digi Changer</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        <strong>Digi Changer</strong> adalah sebuah inovasi teknologi dari siswa kelas <strong>XII Kartini 1 Kelompok 1 (Digi Rangers)</strong> SMA Negeri 1 Pekalongan. Alat ini dirancang sebagai mesin penukar uang kertas menjadi koin SMANSA, yang bertujuan untuk mempermudah proses penukaran bagi para siswa secara mandiri dan efisien. Dilengkapi dengan sensor pendeteksi benda serta sistem pendorong otomatis, Digi Changer mampu mendeteksi uang kertas yang dimasukkan, kemudian secara otomatis mengeluarkan koin sebagai gantinya. Kehadiran alat ini diharapkan dapat mengurangi ketergantungan pada petugas dan meminimalkan risiko kesalahan dalam proses penukaran.
+      </p>
+
+      <img src="https://i.pinimg.com/736x/ff/d9/c6/ffd9c69f7c7968b1c5f3b043e21f771b.jpg" alt="Ilustrasi AC Adiwiyata">
+
+      <p>
+        <strong>Manfaat:</strong><br>
+        1. Mempermudah proses penukaran uang<br>
+        2. Mengurangi beban kerja Humas<br>
+        3. Meningkatkan efisiensi waktu<br>
+        4. Mendorong penggunaan teknologi di lingkungan sekolah<br>
+        5. Meningkatkan kemandirian siswa<br>
+      </p>
+
+      <a class="back-link" href="index_with_bg.html">&larr; Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      const backLink = document.querySelector('.back-link');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

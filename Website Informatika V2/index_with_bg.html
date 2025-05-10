@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>P5 Rekayasa Teknologi</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      font-family: 'Coolvetica';
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      letter-spacing: 0.5px;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .gif-background {
+      background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnMzMDV5bGpiNGo5MWs0Y3N1cnVsMjRreWl2Y2l0NzFka3RwdzJiaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YL5y2fJdjY1nOh11b7/giphy.gif') center/cover no-repeat;
+      padding: 40px 20px;
+      border-radius: 16px;
+    }
+
+    .gif-background h1,
+    .gif-background p {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 8px;
+      margin: 0;
+    }
+
+    .gif-background h1 {
+      font-size: 26px;
+      background: linear-gradient(to right, #e0d3f5, #f0cfd4);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .gif-background p {
+      font-size: 16px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    a.card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+a.card:hover {
+  background: linear-gradient(145deg, #5a63d8, #9fa6ff);
+  transform: scale(1.05);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(94, 99, 255, 0.4);
+}
+
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 16px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      margin-top: 40px;
+      color: #aaa;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #ff0000, #ff4d4d, #ff6666, #ff9999);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <div class="header">
+      <div class="gif-background">
+        <h1>P5 Rekayasa Teknologi</h1>
+        <p>Proyek P5 Rekayasa Teknologi menampilkan karya inovatif siswa SMAN 1 Pekalongan untuk menciptakan solusi teknologi yang bermanfaat bagi masyarakat.</p>
+      </div>
+    </div>
+
+    <div class="grid">
+      <a href="ac-adiwiyata_with_bg.html" class="card">
+        <div class="card-icon">❄️</div>
+        <div class="card-title">AC Adiwiyata</div>
+      </a>
+      <a href="tong-sampah_with_bg.html" class="card">
+        <div class="card-icon">🗑️</div>
+        <div class="card-title">Tong Sampah Otomatis</div>
+      </a>
+      <a href="penake.html" class="card">
+      <div class="card-icon">🚿</div>
+      <div class="card-title">PENAKE</div>
+      </a>
+      <a href="digi-changer.html" class="card">
+      <div class="card-icon">💰</div>
+      <div class="card-title">Digi Changer</div>
+      </a>
+      <a href="rain-sensor.html" class="card">
+      <div class="card-icon">⛅</div>
+      <div class="card-title">Rain Sensor</div>
+      </a>
+      <a href="informasi-p5_with_bg.html" class="card">
+        <div class="card-icon">❓</div>
+        <div class="card-title">Informasi P5</div>
+      </a>
+      <a href="kontak_with_bg.html" class="card">
+        <div class="card-icon">📱</div>
+        <div class="card-title">Kontak</div>
+      </a>
+    </div>
+
+    <footer>
+      © 2024 SMAN 1 Pekalongan<br>
+      Proyek P5 Rekayasa Teknologi
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      document.querySelectorAll('a.card').forEach(card => {
+        card.addEventListener('click', function (e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

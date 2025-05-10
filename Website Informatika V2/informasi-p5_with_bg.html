@@ -1,0 +1,148 @@
+<div class="content">
+  <p></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informasi Umum P5</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .content {
+      background-color: #1e1e1e;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .content img {
+      width: 50%;
+      border-radius: 12px;
+      margin: 15px 0;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .content p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #00c3ff;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 195, 255, 0.4);
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <header>
+      <h1>Informasi P5</h1>
+    </header>
+
+    <div class="content">
+      <p>
+        Karya-karya inovatif dari siswa terpelajar <strong>SMAN 1 Pekalongan</strong> dalam proyek P5 Rekayasa Teknologi. Proyek ini bertujuan untuk mengembangkan kreativitas, keterampilan teknologi, dan solusi inovatif yang dapat memberikan manfaat nyata bagi masyarakat. Setiap karya dirancang dengan dedikasi tinggi dan semangat untuk menciptakan perubahan positif di lingkungan sekitar.
+      </p>
+      <img src="https://www.sman1pekalongan.sch.id/v2/wp-content/uploads/2019/10/LOGO-SMA-1-PKL-HD-1024x1024.png" alt="Ilustrasi AC Adiwiyata">
+      <a class="back-link" href="index_with_bg.html">&larr; Kembali ke Beranda</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      const backLink = document.querySelector('.back-link');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontak</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0 !important;
+      transition: opacity 0.5s ease;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      background: linear-gradient(to right, #f0cfd4, #c0d8f0);
+      -webkit-background-clip: text;
+      color: transparent;
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+
+    .contact-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    }
+
+    .contact-card a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background-color: #00c3ff;
+  color: #111;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 195, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 195, 255, 0.4);
+}
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045, #ffffff, #833ab4);
+  background-size: 600% 600%;
+  animation: gradientAnimation 20s ease infinite;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.insta-button {
+  display: inline-block;
+  margin: 6px 0;
+  padding: 10px 16px;
+  background-color: silver;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.insta-button:hover {
+  background-color: #d62121;
+  transform: translateY(-2px);
+}
+</style>
+</head>
+<body>
+  <div class="animated-background"></div>
+  <div class="container">
+    <h1>Hubungi Kami</h1>
+
+    
+<div class="contact-card">
+  <strong>Akun Instagram Sekolah:</strong><br><br>
+  <a class="insta-button" href="https://www.instagram.com/sma1pekalongan" target="_blank">@sma1pekalongan</a>
+</div>
+
+<div class="contact-card">
+  <strong>Proyek Siswa:</strong><br><br>
+  <a class="insta-button" href="https://www.instagram.com/karasatech" target="_blank">@karasatech (AC Adiwiyata)</a><br>
+  <a class="insta-button" href="https://www.instagram.com/tech_titansc" target="_blank">@tech_titansc (Tong Sampah Otomatis)</a>
+  <a class="insta-button" href="https://www.instagram.com/aethery.grp" target="_blank">@aethery.grp (PENAKE)</a>
+  <a class="insta-button" href="https://www.instagram.com/digi_rangers" target="_blank">@digi_rangers (Digi Changer)</a>
+  <a class="insta-button" href="https://www.instagram.com/megatron.tecno" target="_blank">@megatron.tecno (Rain Sensor)</a>
+
+</div>
+
+
+    
+<div class="contact-card">
+  <strong>Pembuat Website:</strong><br>
+  <p>Nama: M.Wijdan Az Zayyan<br>
+  No Absen: 19<br>
+  Kelas: XI Kartini 6</p>
+  <p>Nama: Muhammad Fairuz Fahri Akbar<br>
+    No Absen: 24<br>
+    Kelas: XI Kartini 6</p>
+    <p>Nama: Sofiyyah Zahra Kusumaningtyas<br>
+      No Absen: 35<br>
+      Kelas: XI Kartini 6</p>
+      <p>Nama: Ririn Fatimah Az Zahra<br>
+        No Absen: 30<br>
+        Kelas: XI Kartini 6</p>
+</div>
+
+<a href="index_with_bg.html" class="back-link">&larr; Kembali ke Beranda</a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+
+      const backLink = document.querySelector('.back-link');
+      backLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        document.body.classList.remove('fade-in');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      });
+    });
+  </script>
+</body>
+</html>
